@@ -45,7 +45,7 @@ class Login extends BaseController
 
     public function logout()
     {
-        session()->destroy();
+        session()->remove(['user', 'email', 'level', 'loggedIn']);
         return redirect()->to(base_url("/login"));
     }
 
